@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TapSwap Mini App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>TapSwap Mini App</h1>
+    <div id="user-balance">Balance: 0</div>
+    <div id="user-energy">Energy: 0/500</div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <button onclick="showPage('earn')">Earn</button>
+    <button onclick="showPage('tasks')">Tasks</button>
+    <button onclick="showPage('account')">Account</button>
+    <button onclick="showPage('cashier')">Cashier</button>
+  </nav>
+
+  <!-- Pages -->
+  <main>
+    <!-- Earn / Tap Page -->
+    <section id="earn" class="page">
+      <button id="tap-btn">Tap to Earn</button>
+      <button onclick="activateBoost('points')">Boost Points</button>
+      <button onclick="activateBoost('energy')">Boost Energy</button>
+      <div id="tap-message"></div>
+    </section>
+
+    <!-- Tasks Page -->
+    <section id="tasks" class="page" style="display:none;">
+      <ul id="tasks-list"></ul>
+    </section>
+
+    <!-- Account Page -->
+    <section id="account" class="page" style="display:none;">
+      <div id="account-info"></div>
+    </section>
+
+    <!-- Cashier Page -->
+    <section id="cashier" class="page" style="display:none;">
+      <input type="number" id="deposit-amount" placeholder="Deposit Amount">
+      <button onclick="depositTON()">Deposit</button>
+      <input type="number" id="withdraw-amount" placeholder="Withdraw Amount">
+      <button onclick="withdrawTON()">Withdraw</button>
+      <div id="cashier-message"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
